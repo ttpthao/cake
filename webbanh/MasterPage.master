@@ -27,47 +27,26 @@
                 
                 
                 <div class="main">
-        <div class="shadow">
-            <ul class="kwick">
-                <li>
-                    <a href="#">
-                    <img src="images/banner_1.jpg" alt="image"/>
-                    <p>BÁNH KEM</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                    <img src="images/b1.gif" alt="image"/>
-                    <p>MẸO VẶT</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                    <img src="images/bannerkem.jpg" alt="image"/>
-                    <p>KEM</p>
-                    </a>
-                </li>
-            </ul>
-        </div>
+       
     </div>
                 <%--MENU NGANG--%>
             <div class="menu">
                  <div id="menu">
                     <ul>
-                        <li><a href="trangchu.aspx">   TRANG CHUÛ   </a></li>
-                        <li><a href="gioithieu.aspx">GIÔÙI THIEÄU</a></li>
-                                    <li><a href="#">COÂNG THÖÙC LAØM BAÙNH</a>
+                        <li><a href="trangchu.aspx">   TRANG CHỦ   </a></li>
+                        <li><a href="gioithieu.aspx">GIỚI THIỆU</a></li>
+                                    <li><a href="#">CÔNG THỨC LÀM BÁNH</a>
                             <ul>
-                                <li><a href="banhkem.aspx">BAÙNH KEM</a></li>
+                                <li><a href="banhkem.aspx">BÁNH KEM</a></li>
                                 <li><a href="kem.aspx">KEM</a></li>
-                                <li><a href="kem.aspx">MEÏO VAËT</a></li>
+                                <li><a href="kem.aspx">MẸO VẶT</a></li>
                                
                             </ul>
                         </li>
                         <%--<li><a href="meo.aspx">MEÏO VAËT</a></li>--%>
                        <%-- <li><a href="#">HÌNH AÛNH</a></li>--%>
-                        <li><a href="lienhe.aspx">ÑÒA CHÆ</a></li>
-                         <li><a href="dangnhap.aspx">ÑAÊNG NHAÄP</a></li>
+                        <li><a href="lienhe.aspx">LIÊN HỆ</a></li>
+                         <li><a href="dangnhap.aspx">ĐĂNG NHẬP</a></li>
                     </ul>
                 </div>
             </div>
@@ -93,7 +72,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>HOÃ TRÔÏ KHAÙCH HAØNG</h3>
+                    <h3>HỖ TRỢ KHÁCH HÀNG</h3>
                     <hr>
                     <ul>
                         <li><a href="#">Hotline:12345678</a></li>
@@ -101,7 +80,7 @@
                     </ul>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>THOÂNG TIN CÖÛA HAØNG</h3>
+                    <h3>THÔNG TIN CỬA HÀNG</h3>
                     <hr>
                     <ul>
                         <li><a href="#">Địa chỉ: Phú Thọ - Bình Dương</a></li>
