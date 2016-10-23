@@ -1,0 +1,114 @@
+﻿*{
+font-family:Arial,sans-serif;font-size:small;margin:0px;padding:0px;
+}
+
+body {
+    background:url(http://localhost:7174/images/background.png);
+}
+#mainWap {
+    width:1200px;
+    min-height:100%;
+    height:auto;height:100%;
+    margin: 0 auto;
+    background-color: white;
+    /*border-radius: 5px 5px 0 0;*/
+    text-align: center;
+}
+#header{
+    margin-bottom:5px;
+    height:500px;
+    /*border: 1px solid #00ff21;*/
+}
+.logo {
+    float:left;
+    width:298px;
+    /*border:1px solid #00ff21;*/
+    height:200px;
+}
+.banner {
+    float:left;
+    width:696px;
+    /*border:1px solid #0094ff;*/
+    /*height:200px;*/
+}
+
+.menu {
+    margin-top:6px;
+    height:30px;
+    width:100%;
+    /*border:1px solid #d71fde;*/
+}
+.truot {
+    margin-top:6px;
+    height:250px;
+    width:100%;
+    border:1px solid #d71fde;
+}
+/*TẠO MENU 2 CẤP*/
+#menu ul{
+list-style: none;
+font-family:VNI-Cooper, san-serif;
+font-size: 16px;
+padding: 0;
+}
+ 
+#menu ul li{
+float:left;
+position:relative;
+}
+
+#menu ul a{
+text-decoration:none;
+color:#fff;
+display:block;
+font-weight:bold;
+padding:10px 30px;
+background:#000;
+}
+ 
+#menu ul a:hover{
+background:#f7b1f6;
+}
+ 
+//CSS Tạo Menu Cấp 2
+#menu li ul a{
+background:#444;
+}
+ 
+#menu li ul{
+position:absolute;
+display:none;
+width:200px;
+}
+ 
+#menu li:hover ul{
+display:block;
+}
+
+/*MENU TRÁI*/
+.left {
+    float:left;
+    width:198px;
+    height:200px;
+    border: 1px solid #0094ff;
+}
+.right {
+    float:left;
+    width:1200px;
+    
+    /*margin-left:5px;
+    margin-right:5px;*/
+    /*border: 1px solid #d71fde;*/
+}
+.clr {
+    clear:both;
+}
+.footer {
+    margin-top:8px;
+    /*border: 1px solid #00ff21;*/
+}
+h2{
+    font-family:'Times New Roman';
+    font-size:16px;
+
+}

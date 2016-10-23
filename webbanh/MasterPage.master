@@ -1,0 +1,126 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/custom.css" rel="stylesheet" />
+    <link href="css1/Style1.css" rel="stylesheet" />
+    <link href="css1/Stylebanner.css" rel="stylesheet" />
+    
+</head>
+<body id="body">
+    <form id="form1" runat="server">
+    <div id="mainWap">
+        <div id="header">
+            <div class="logo">
+                <asp:Image ID="Image1" runat="server" ImageUrl="~/images/logo1.jpg" />
+            </div>
+            <asp:Image ID="Image2" runat="server" ImageUrl="~/images/banner-mobi1.png" />
+             <%--banner--%>
+            <div class="clr"></div>
+
+            <%--MENU TRƯỢT--%>
+            <div class="truot"> <%--ĐỪNG BỎ CÁI DIV NÀY LÀ KO BỊ KHOẢNG TRẮNG ĐÓ--%>
+                
+                
+                <div class="main">
+        <div class="shadow">
+            <ul class="kwick">
+                <li>
+                    <a href="#">
+                    <img src="images/banner_1.jpg" alt="image"/>
+                    <p>BÁNH KEM</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                    <img src="images/b1.gif" alt="image"/>
+                    <p>MẸO VẶT</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                    <img src="images/bannerkem.jpg" alt="image"/>
+                    <p>KEM</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+                <%--MENU NGANG--%>
+            <div class="menu">
+                 <div id="menu">
+                    <ul>
+                        <li><a href="trangchu.aspx">   TRANG CHUÛ   </a></li>
+                        <li><a href="gioithieu.aspx">GIÔÙI THIEÄU</a></li>
+                                    <li><a href="#">COÂNG THÖÙC LAØM BAÙNH</a>
+                            <ul>
+                                <li><a href="banhkem.aspx">BAÙNH KEM</a></li>
+                                <li><a href="kem.aspx">KEM</a></li>
+                                <li><a href="kem.aspx">MEÏO VAËT</a></li>
+                               
+                            </ul>
+                        </li>
+                        <%--<li><a href="meo.aspx">MEÏO VAËT</a></li>--%>
+                       <%-- <li><a href="#">HÌNH AÛNH</a></li>--%>
+                        <li><a href="lienhe.aspx">ÑÒA CHÆ</a></li>
+                         <li><a href="dangnhap.aspx">ÑAÊNG NHAÄP</a></li>
+                    </ul>
+                </div>
+            </div>
+           <%-- hết menu ngang--%>
+            </div>
+        </div>
+        <%--HẾT MENU TRƯỢT--%>
+
+            <%--MENU TRÁI--%>
+        <%--<div class="left">
+            cột bên trái
+        </div>--%>
+            <%--PHẦN CHÍNH--%>
+        <div class="right">
+            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+                nội dung
+            </asp:ContentPlaceHolder>
+        </div>
+        <div class="clr"></div>
+        <%--FOOTTER--%>
+        <div class="footer">
+               <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6">
+                    <h3>HOÃ TRÔÏ KHAÙCH HAØNG</h3>
+                    <hr>
+                    <ul>
+                        <li><a href="#">Hotline:12345678</a></li>
+                        <li><a href="#">Tài liệu hướng dẫn</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6">
+                    <h3>THOÂNG TIN CÖÛA HAØNG</h3>
+                    <hr>
+                    <ul>
+                        <li><a href="#">Địa chỉ: Phú Thọ - Bình Dương</a></li>
+                        <li><a href="#">Số điện thoại: 09876543221</a></li>
+                        <li><a href="#">Email: thuytrang@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <p style="text-align:center;color:#fff;margin-bottom:0px;line-height:20px;font-size:15px">
+
+        </p>
+    </footer>
+        </div>
+    </div>
+        
+    </form>
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+    
+</html>

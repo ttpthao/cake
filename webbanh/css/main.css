@@ -1,0 +1,137 @@
+﻿* {
+  margin: 0;
+  padding: 0;
+}
+
+/*==Style cơ bản cho website==*/
+body {
+  font-family: sans-serif;
+  color: #3333;
+}
+/*==Style cho menu===*/
+#menu ul {
+  background: none;
+  list-style-type: none;
+  text-align: center;
+}
+#menu ul li 
+{
+
+  display: inline-table;
+  width: 150px;
+  height: 40px;
+  line-height: 40px;
+  margin-left: 5px;
+  position:relative;
+}
+
+#menu ul li a 
+{
+	font-weight:bold;
+	font-size: 14px;
+	color:#1F568B;
+	text-decoration: none;
+	display: block;
+	}
+#menu ul li a:hover 
+{
+	background: #f1f1f1;
+	color:Maroon;
+	}
+/*==Style cho submenu===*/
+#menu ul li >.sub-menu
+{
+	display: none;
+	position:absolute;
+	}
+
+#menu ul li:hover .sub-menu
+{
+	display:block;
+	}
+	
+/*== css cho slide ảnh==*/
+#bigPic{
+	width:600px;
+	height:300px;
+	padding:1px;
+	border:1px solid #CCC;
+	background-color:#FFF;
+	margin-bottom:10px;
+	margin-left: 200px;
+}
+#bigPic img{
+	position:absolute;
+	display:none;
+	margin-left: 200px;
+}
+ul#thumbs li.active{
+	border:2px solid #000;	
+	background:#fff;
+	padding:2px;
+}
+ul#thumbs, ul#thumbs li{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+	
+ul#thumbs li{
+	float:left;
+	margin-right:7px;
+	margin-bottom:5px;
+	border:1px solid #CCC;	
+	padding:3px;
+	cursor:pointer;
+}
+ul#thumbs img{
+	float:left;
+	width:80px;
+	height:80px;
+	line-height:80px;
+	overflow:hidden;
+	position:relative;
+	z-index:1;		
+}#bigPic{
+	width:900px;
+	height:300px;
+	padding:1px;
+	border:1px solid #CCC;
+	background-color:#FFF;
+	margin-bottom:10px;
+	margin-left: 220px;
+}
+#bigPic img{
+	position:absolute;
+	display:none;
+}
+ul#thumbs li.active{
+	border:2px solid #000;	
+	background:#fff;
+	padding:2px;
+}
+ul#thumbs, ul#thumbs li{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+	
+ul#thumbs li{
+	float:left;
+	margin-right:7px;
+	margin-bottom:5px;
+	border:1px solid #CCC;	
+	padding:3px;
+	cursor:pointer;
+}
+ul#thumbs img{
+	float:left;
+	width:80px;
+	height:80px;
+	line-height:80px;
+	overflow:hidden;
+	position:relative;
+	z-index:1;
+	margin-left:inherit;
+	
+}

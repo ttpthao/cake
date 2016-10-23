@@ -1,0 +1,291 @@
+﻿@charset "utf-8";
+/* CSS Document */
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover{
+	color:#fff;
+	background-color:#0000FF;
+}
+.navbar-default{
+	background-color:#ffffff;
+	border:none;
+	 margin-bottom: 0px!important;
+	border-radius:0;
+	top:0px;
+	left:0;
+	right:0;
+	z-index:1000;
+}
+.navbar-default .navbar-nav>li>a, .navbar-default .navbar-brand{
+	color:#fff;
+	text-transform:uppercase;
+	font-weight:400;
+}
+.slide{
+	margin-bottom:15px;
+}
+hr.style-four {
+    height: 12px;
+    border: 0;
+    box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+}
+.container-dichvu{
+	position:relative;
+}
+.dichvu div{
+	padding-top:20px;
+	padding-bottom:20px;
+	text-align:center;
+}
+.dichvu img{
+	max-width:100px;
+	max-height:100px;
+}
+
+.dichvu h2{
+	margin-top:6px;
+	padding-bottom:10px;
+	border-bottom:1px solid #000;
+}
+.dichvu h2 a{
+	background:url(../images/ngoisao.png) center bottom no-repeat;
+	padding-bottom:17px;
+	font-size:14px;
+	font-weight:bold;
+	color:#000;
+	text-transform:uppercase;
+}
+.thietke .img-left img{
+	width:100%;
+}
+.thietke{
+	padding-top:50px;
+	padding-bottom:50px;
+}
+.thietke h2{
+	text-transform:uppercase;
+	text-align:center;
+	font-size:22px;
+	font-weight:bold;
+	color:#ffa500
+}
+.thietke>p{
+	text-align:center;
+	text-transform:uppercase;
+	color:#000;
+	font-size:14px;
+	margin-bottom:35px;
+}
+.block-new{
+	position:relative;
+}
+.block-new img{
+	width:100%;
+}
+.menu-background{
+background-color:#00b0ee!important;
+}
+.content-new-block{
+	position:absolute;
+	left:0px;
+	right:0px;
+	bottom:0;
+	background-color:#00b0ee;
+	padding:15px;
+}
+.content-new-block  h3{
+	margin-top:0px;
+}
+.content-new-block a{
+	display:block;
+	color:#fff;
+	font-size:16px;
+	font-weight:bold;
+}
+.tintuc .content-new-block p{
+	color:#fff;
+}
+.block-new-hot{
+	margin:5px -10px;
+}
+.new{
+	margin-bottom:6px;
+	padding-left:6px;
+	padding-right:6px;
+}
+.new .content-new-block a{
+	font-size:13px;
+}
+footer{
+	/*background-color:*//*#00b0ee*//*#eb76ee;*/
+    
+    background-image:url(http://localhost:7174/images/footer_banner1.png)
+}
+footer h3{
+    margin-top:90px;
+	color:#000;
+    font-family:VNI-Cooper;
+	font-size:18px;
+	text-align:center;
+}
+footer hr{
+	width:60%;
+}
+footer ul{
+	list-style:none;
+}
+footer li a{
+	position:relative;
+	color:#000;
+}
+footer li a:before {
+	margin-right:10px;
+    content: '';
+    width: 0;
+    height: 0;
+    border: 4px solid transparent;
+    position: absolute;
+    border-left: 5px solid #ffffff;
+    left: -10px;
+    top: 5px;
+}
+.hotline-mobi{
+	display:none;
+}
+.product-img img{
+	width:100%;
+}
+.product-content{
+	background-color:#fff;
+	padding:10px 15px;
+}
+.product-content img{
+	width:50px;
+	float:left;
+	margin-right:10px;
+}
+.product-content p{
+	line-height:20px;
+	padding-top:5px;
+}
+.gia{
+	position:relative;
+	margin-bottom:0px;
+	height:30px;
+    
+}
+.btn-xem{
+	position:absolute;
+	left:0px;
+	background-color:#00b0ee;
+	padding:3px 5px;
+	color:#fff;
+}
+.btn-xem:hover{
+	color:#fff;
+	text-decoration:none;
+	background-color: #ffa500;
+}
+.btn-gia{
+	color:#000;
+	font-weight:bold;
+	position:absolute;
+	right:0px;
+}
+.btn-gia:hover{
+	text-decoration:none;
+}
+.product-name{
+	margin-bottom:15px;
+}
+.product-name a{
+	color:#000;
+	font-weight:bold;
+}
+.product-name a:hover{
+	text-decoration:none;
+	color:#1a3260;
+}
+.product{
+	margin-top:15px;
+	margin-bottom:15px;
+}
+.product article{
+	-webkit-box-shadow: 0px 0px 2px 0px rgba(184,182,184,1);
+-moz-box-shadow: 0px 0px 2px 0px rgba(184,182,184,1);
+box-shadow: 0px 0px 2px 0px rgba(184,182,184,1);
+}
+.product-details h1{
+	font-size:18px;
+	font-weight:bold;
+	color:#000;
+}
+
+hr.style-four {
+	margin-top:30px;
+    height: 12px;
+    border: 0;
+    box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+}
+@media (max-width: 1024px){
+	.navbar-default .navbar-nav>li>a, .navbar-default .navbar-brand{
+		font-size:13px;
+		padding-left:10px;
+		padding-right:10px;
+	}
+}
+@media (max-width: 768px){
+	.new{
+		margin-top:10px;
+		margin-bottom:0px;
+		padding:0px 15px;
+	}
+	.navbar-right{
+		display:none;
+	}
+	
+	.img-left{
+		margin-bottom:15px;
+	}
+	.navbar-default .navbar-nav>li>a, .navbar-default .navbar-brand{
+		font-size:13px;
+		padding-left:7px;
+		padding-right:7px;
+	}
+	.block{
+		display:none;
+	}
+	.menudoc{
+		display:block;
+	}
+}
+@media (max-width: 767px){
+	.main-site article img{
+		width:100%;
+		float:none;
+		margin-right:10px;
+		margin-bottom:10px;
+}
+	.navbar-toggle{
+		background-color:#fff;
+	}
+	.img-left{
+		margin-bottom:15px;
+	}
+	.khachhang img{
+		float:none;
+		margin: 0px auto;
+	}
+	.hotline-mobi{
+		display:block;
+		font-size:13px;
+		margin-left:30px;
+	}
+	.navbar-right{
+		display:none;
+	}
+	.block{
+		display:none;
+	}
+	.menudoc{
+		display:block;
+	}
+}
