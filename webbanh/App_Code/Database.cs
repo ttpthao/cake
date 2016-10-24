@@ -37,4 +37,15 @@ public class Database
         con.Close();
         return a;
     }
+    public DataTable XULYDULIEU(SqlCommand cmd)
+    {
+        DataTable dt = new DataTable();
+        SqlDataAdapter sda = new SqlDataAdapter();
+        cmd.CommandType = CommandType.Text;
+        cmd.Connection = con;
+        con.Open();
+        sda.SelectCommand = cmd;
+        sda.Fill(dt);
+        return dt;
+    }
 }

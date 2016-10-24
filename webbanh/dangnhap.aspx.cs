@@ -21,7 +21,7 @@ public partial class dangnhap : System.Web.UI.Page
         DataTable data = db.DOCDULIEU(string.Format("select * from Nguoi_Dung where TenDangNhap ='{0}' and MatKhau='{1}'", username, pass));
         if (data.Rows.Count > 0)
         {
-            Session["UserName"] = data.Rows[0]["TenDangNhap"].ToString();
+            Session["TenDangNhap"] = data.Rows[0]["TenDangNhap"].ToString();
             Response.Redirect("trangchu.aspx");
         }
         else

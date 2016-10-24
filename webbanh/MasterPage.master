@@ -13,6 +13,8 @@
 </head>
 <body id="body">
     <form id="form1" runat="server">
+         <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager> 
     <div id="mainWap">
         <div id="header">
             <div class="logo">
@@ -36,17 +38,27 @@
                         <li style="width: 190px"><a href="gioithieu.aspx">GIỚI THIỆU</a></li>
                         <li><a href="#">CÔNG THỨC LÀM BÁNH</a>
                             <ul>
-                                <li><a href="banhkem.aspx">BÁNH KEM</a></li>
-                                <li><a href="kem.aspx">KEM</a></li>
-                                <li><a href="kem.aspx">MẸO VẶT</a></li>
+                                <li style="width: 250px"><a href="banhkem.aspx">BÁNH KEM</a></li>
+                                <li style="width: 250px"><a href="kem.aspx">KEM</a></li>
+                                <li style="width: 250px"><a href="kem.aspx">MẸO VẶT</a></li>
 
                             </ul>
                         </li>
-                        <%--<li><a href="meo.aspx">MEÏO VAËT</a></li>--%>
-                        <%-- <li><a href="#">HÌNH AÛNH</a></li>--%>
                         <li style="width: 190px"><a href="timkiem.aspx">TÌM KIẾM</a></li>
                         <li style="width: 190px"><a href="lienhe.aspx">LIÊN HỆ</a></li>
-                        <li style="width: 190px"><a href="dangnhap.aspx">ĐĂNG NHẬP</a></li>
+                        <%if (Session["TenDangNhap"] != null) { %> 
+                            <li style="width: 190px"><a><%= Session["TenDangNhap"] %></a>
+                                <ul>
+                                    <li style="width: 190px"><a href="banhkem.aspx">SIGN OUT</a></li>
+                                    <li style="width: 190px"><a href="quanly.aspx">QUẢN LÝ BÀI VIẾT</a></li>
+                                </ul>
+                            </li>
+                        <% }
+                        else { %>
+                            <li style="width: 190px"><a href="dangnhap.aspx">ĐĂNG NHẬP</a></li>
+                        <% } %>
+
+                        
                     </ul>
                 </div>
             </div>
