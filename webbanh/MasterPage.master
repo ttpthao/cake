@@ -23,7 +23,7 @@
             <div class="clr"></div>
 
             <%--MENU TRƯỢT--%>
-            <div class="truot"> <%--ĐỪNG BỎ CÁI DIV NÀY LÀ KO BỊ KHOẢNG TRẮNG ĐÓ--%>
+           <%-- <div class="truot">--%> <%--ĐỪNG BỎ CÁI DIV NÀY LÀ KO BỊ KHOẢNG TRẮNG ĐÓ--%>
                 
                 
                 <div class="main">
@@ -33,8 +33,8 @@
             <div class="menu">
                  <div id="menu">
                     <ul>
-                        <li><a href="trangchu.aspx">   TRANG CHỦ   </a></li>
-                        <li><a href="gioithieu.aspx">GIỚI THIỆU</a></li>
+                        <li style="width:190px"><a href="trangchu.aspx">   TRANG CHỦ   </a></li>
+                        <li style="width:190px"><a href="gioithieu.aspx">GIỚI THIỆU</a></li>
                                     <li><a href="#">CÔNG THỨC LÀM BÁNH</a>
                             <ul>
                                 <li><a href="banhkem.aspx">BÁNH KEM</a></li>
@@ -45,14 +45,15 @@
                         </li>
                         <%--<li><a href="meo.aspx">MEÏO VAËT</a></li>--%>
                        <%-- <li><a href="#">HÌNH AÛNH</a></li>--%>
-                        <li><a href="lienhe.aspx">LIÊN HỆ</a></li>
-                         <li><a href="dangnhap.aspx">ĐĂNG NHẬP</a></li>
+                        <li style="width:190px"><a href="timkiem.aspx">TÌM KIẾM</a></li>
+                        <li style="width:190px"><a href="lienhe.aspx">LIÊN HỆ</a></li>
+                         <li style="width:190px"><a href="dangnhap.aspx">ĐĂNG NHẬP</a></li>
                     </ul>
                 </div>
             </div>
            <%-- hết menu ngang--%>
             </div>
-        </div>
+        <%--</div>--%>
         <%--HẾT MENU TRƯỢT--%>
 
             <%--MENU TRÁI--%>
@@ -67,29 +68,31 @@
         </div>
         <div class="clr"></div>
         <%--FOOTTER--%>
+        <hr />
         <div class="footer">
                <footer>
-        <div class="container">
+
             <div class="row">
                 <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>HỖ TRỢ KHÁCH HÀNG</h3>
-                    <hr>
+                    <h2>HỖ TRỢ KHÁCH HÀNG</h2>
+                    
                     <ul>
                         <li><a href="#">Hotline:12345678</a></li>
                         <li><a href="#">Tài liệu hướng dẫn</a></li>
                     </ul>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>THÔNG TIN CỬA HÀNG</h3>
-                    <hr>
+                    <h2>THÔNG TIN CỬA HÀNG</h2>
+                    
                     <ul>
                         <li><a href="#">Địa chỉ: Phú Thọ - Bình Dương</a></li>
                         <li><a href="#">Số điện thoại: 09876543221</a></li>
                         <li><a href="#">Email: thuytrang@gmail.com</a></li>
+                        <li><br /></li>
                     </ul>
                 </div>
             </div>
-        </div>
+       
         <p style="text-align:center;color:#fff;margin-bottom:0px;line-height:20px;font-size:15px">
 
         </p>

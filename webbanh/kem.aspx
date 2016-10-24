@@ -1,8 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="kem.aspx.cs" Inherits="kem" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <div class="container" style="margin-top:90px">
-        <div class="container" style="background-color:#fff">
+    <div class="container" style="margin-top:300px">
         <h1 style="color:#000;font-size:23px;text-align:center;font-weight:bold;text-shadow:1px 1px 2px #ccc;">DANH SÁCH KEM SỮA CHUA ĐẶC BIỆT</h1>
         <div class="row">
             <div class="col-md-3 col-sm-6 col-xs-12 product">
@@ -128,7 +127,7 @@
                     </div>
                 </article>
             </div>
-            <div class="col-md-3 col-md-offset-1">
+            <div class="col-md-10 col-md-offset-1">
             <h1 style="color:#000;font-size:23px;text-align:center;font-weight:bold;text-shadow:1px 1px 2px #ccc;">VIDEO HƯỚNG DẪN</h1>
             <div class="product">
                 <div style="margin-bottom:20px">

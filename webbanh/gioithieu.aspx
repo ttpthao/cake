@@ -1,10 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="gioithieu.aspx.cs" Inherits="gioithieu" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-<div class="container" style="margin-top:90px">
-    <img src="images/b.gif" style="width: 680px; height:200px; margin: 20px 40px; float: left "/>
+    
     <div class="container" style="background-color:#fff;">
+
         <div class="col-md-8">
+            <img src="images/b.gif" style="width: 680px; height:200px; margin: 20px 40px; float: left "/>
             <h1 style="color:#ff0000;font-size:40px;text-align:center;font-weight:bold;text-shadow:1px 1px 2px #ccc;">GIỚI THIỆU</h1>
             <p style="font-size:28px;text-align:justify;text-shadow:1px 1px 2px #ccc;">
                 Chào bạn, <br /><br />
@@ -44,6 +45,5 @@ Rất vui vì bạn đã ghé thăm SWEET CAKES và đọc hết những dòng n
             </div>
         </div>
     </div>
-</div>
 </asp:Content>
 

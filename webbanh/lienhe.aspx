@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
-    <div class="container" style="margin-top:-15px">
+    <div class="container" style="margin-top:250px">
         <div class="row" style="background-color:#fff;border:thin #d9d9d9 solid;margin:0px">
             <div class="col-md-12">
                 <div style="margin-top:20px">
@@ -12,14 +12,14 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-9 main-site" style="margin-bottom:20px">
+            <div class="col-md-6" style="margin-bottom:20px">
                 <div class="content">
                     <div class="col_left_contact">
                         <h3 style="margin: 40px 0px 20px 0px;text-align:center;color:#ff0000;font-weight:bold;font-size:30px">LIÊN HỆ VỚI CHÚNG TÔI</h3>
                         <div class="form_contact">
                             <div class="row">
                                 <div class="col col_1 hidden-xs">
-                                    <p style="text-align:left;color:#1d4df2;font-weight:bold;font-size:24px" >Họ và tên&nbsp;&nbsp;<asp:TextBox ID="txtten" runat="server" Width="273px"></asp:TextBox>
+                                    <p style="text-align:left;color:#1d4df2;font-weight:bold;font-size:24px" >Họ và tên:&nbsp;&nbsp;<asp:TextBox ID="txtten" runat="server" Width="273px"></asp:TextBox>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtten" ErrorMessage="Bạn cần nhập tên" ForeColor="Red"></asp:RequiredFieldValidator>
                                     </p>
@@ -28,7 +28,7 @@
                             <br />
                             <div class="row">
                                 <div class="col col_1 hidden-xs">
-                                    <p style="text-align:left;color:#1d4df2;font-weight:bold;font-size:24px">Điện thoại
+                                    <p style="text-align:left;color:#1d4df2;font-weight:bold;font-size:24px">Số Điện thoại:
                                     &nbsp;<asp:TextBox ID="txtphone" runat="server"></asp:TextBox>
 &nbsp;&nbsp;&nbsp;
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtphone" ErrorMessage="Bạn cần nhập điện thoại" ForeColor="#FF0066"></asp:RequiredFieldValidator>
@@ -38,7 +38,7 @@
                              <br />
                             <div class="row">
                                 <div class="col col_1 hidden-xs">
-                                    <p style="text-align:left;color:#1d4df2;font-weight:bold;font-size:24px">Nội dung
+                                    <p style="text-align:left;color:#1d4df2;font-weight:bold;font-size:24px">Nội dung:
                                     &nbsp;<asp:TextBox ID="txtnoidung" runat="server" Height="133px" TextMode="MultiLine" Width="286px"></asp:TextBox>
 &nbsp;&nbsp;&nbsp;
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtphone" ErrorMessage="Nhập tin nhắn" ForeColor="Red"></asp:RequiredFieldValidator>

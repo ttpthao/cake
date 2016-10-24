@@ -1577,10 +1577,12 @@ pre code {
   overflow-y: scroll;
 }
 .container {
+  margin-top:250px;
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  z-index: 1;
 }
 @media (min-width: 768px) {
   .container {
@@ -2245,6 +2247,7 @@ pre code {
 }
 table {
   background-color: transparent;
+
 }
 caption {
   padding-top: 8px;

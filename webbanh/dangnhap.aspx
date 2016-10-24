@@ -1,13 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="dangnhap.aspx.cs" Inherits="dangnhap" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-
-    <table style="width:1100px;">
+    <div class="container" style="margin-top:300px; margin-left:300px">
+    <table style="width:800px;">
         <tr>
-            <td colspan="3"><B style="font-size: 30px; color: #FF0000;">ĐĂNG NHẬP </B></td>
+            <td class="text-right" style="width:300px;"><B style="font-size: 30px; color: #FF0000;">ĐĂNG NHẬP </B></td>
         </tr>
         <tr>
-            <td class="text-left" style="width: 293px; color: #0000FF; font-weight: bold; font-size: 24px;">TÊN ĐĂNG NHẬP<br />
+            <td class="text-left" style="width: 293px; color: #0000FF; font-weight: bold; font-size: 24px">TÊN ĐĂNG NHẬP: <br />
             </td>
             <td class="text-left" style="width: 379px">
                 <asp:TextBox ID="txtten" runat="server"></asp:TextBox>
@@ -17,7 +17,7 @@
             </td>
         </tr>
         <tr>
-            <td class="text-left" style="width: 293px; font-weight: bold; color: #0000FF; font-size: 24px;">MẬT KHẨU<br />
+            <td class="text-left" style="width: 293px; font-weight: bold; color: #0000FF; font-size: 24px;">MẬT KHẨU: <br />
             </td>
             <td class="text-left" style="width: 379px">
                 <asp:TextBox ID="txtmatkhau" runat="server" TextMode="Password"></asp:TextBox>
@@ -34,6 +34,6 @@
             <td>&nbsp;</td>
         </tr>
     </table>
-
+        </div>
 </asp:Content>
 
