@@ -16,7 +16,7 @@ body {
 }
 #header{
     margin-bottom:5px;
-    height:500px;
+    height:100px;
     position: absolute;
     z-index: 2;
     /*border: 1px solid #00ff21;*/

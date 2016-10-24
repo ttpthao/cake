@@ -18,10 +18,10 @@ public partial class dangnhap : System.Web.UI.Page
         string pass = txtmatkhau.Text;
 
         Database db = new Database();
-        DataTable data = db.DOCDULIEU(string.Format("select*from dangnhap where tendangnhap ='{0}' and matkhau='{1}'", username, pass));
+        DataTable data = db.DOCDULIEU(string.Format("select * from Admin where username ='{0}' and password='{1}'", username, pass));
         if (data.Rows.Count > 0)
         {
-            Session["UserName"] = data.Rows[0]["tendangnhap"].ToString();
+            Session["UserName"] = data.Rows[0]["username"].ToString();
             Response.Redirect("trangchu.aspx");
         }
         else

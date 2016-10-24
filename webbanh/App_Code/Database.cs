@@ -15,7 +15,7 @@ public class Database
     SqlConnection con;
     public Database()
     {
-        string Strcon = "Data Source=.;Initial Catalog=banhkem;Integrated Security=True"; 
+        string Strcon = "Server=tcp:shakuracake.database.windows.net;Database=shakuracake;User ID =shakuracake@shakuracake.database.windows.net; Password =Abcxyz123!;Trusted_Connection=False;Encrypt=True;"; 
         con = new SqlConnection(Strcon); //tạo 1 kết nối CSDL
     }
 
