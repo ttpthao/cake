@@ -80,6 +80,7 @@
             
                     </div>
                         <div class="col-md-6 col-sm-6 col-xs-12 product">
+                        <asp:Label ID="lblMaBaiHidden" runat="server" Visible="false"></asp:Label>
                         <b style="color:#000;font-size:18px;text-align:left;font-weight:bold">Tên Bài Viết:</b> <asp:TextBox ID="txtTenBai" runat="server" Width="400px" Height="30px" Font-Size="18"></asp:TextBox>
                             <br /><br />
                             <b style="color:#000;font-size:18px;text-align:left;font-weight:bold">Danh Mục:</b>
