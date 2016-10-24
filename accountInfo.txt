@@ -1,0 +1,8 @@
+Account Azure
+shakuracake@hotmail.com
+Pass: Abcxyz123!
+
+Db on Azure
+server: shakuracake.database.windows.net
+Account: shakuracake
+Pass: Abcxyz123!
