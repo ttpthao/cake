@@ -18,16 +18,16 @@ public partial class dangnhap : System.Web.UI.Page
         string pass = txtmatkhau.Text;
 
         Database db = new Database();
-        DataTable data = db.DOCDULIEU(string.Format("select * from Admin where username ='{0}' and password='{1}'", username, pass));
+        DataTable data = db.DOCDULIEU(string.Format("select * from Nguoi_Dung where TenDangNhap ='{0}' and MatKhau='{1}'", username, pass));
         if (data.Rows.Count > 0)
         {
-            Session["UserName"] = data.Rows[0]["username"].ToString();
+            Session["UserName"] = data.Rows[0]["TenDangNhap"].ToString();
             Response.Redirect("trangchu.aspx");
         }
         else
         { 
             //đang nhap ko thanh cong
-            Response.Write("đăng nhập không thành công");
+            Response.Write("Đăng nhập không thành công");
         }
 
     }
