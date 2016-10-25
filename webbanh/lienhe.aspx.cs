@@ -27,6 +27,9 @@ public partial class lienhe : System.Web.UI.Page
         if (a == 1)
         {
             ShowMessage("Đã gửi liên hệ!");
+            txtten.Text = "";
+            txtphone.Text = "";
+            txtnoidung.Text = "";
         }
         else
         {

@@ -34,8 +34,8 @@
                                 <asp:TextBox ID="txtnoidung" runat="server" Height="133px" TextMode="MultiLine" Width="200px"></asp:TextBox></td>
                         </tr>
                         <tr>
-                            <td colspan="2" style="padding-left: 20px">
-                                <asp:Button ID="btngui" runat="server" OnClick="btngui_Click" Text="Gửi" /></td>
+                            <td colspan="2" style="padding-left: 20px;">
+                                <asp:Button ID="btngui" runat="server" OnClick="btngui_Click" Text="Gửi" Font-Size="16px" /></td>
                         </tr>
                     </table>
                 </div>
