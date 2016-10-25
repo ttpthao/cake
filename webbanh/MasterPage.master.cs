@@ -9,6 +9,13 @@ public partial class MasterPage : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        btnTimKiem.Click += new EventHandler(this.btnTimKiem_Click);
+    }
+   public void btnTimKiem_Click(Object sender,
+                           EventArgs e)
+    {
+        //Redirect qua trang kết quả
+        Button clickedButton = (Button)sender;
+        Response.Redirect("ketqua.aspx?tukhoa=" + txtTimKiem.Text);
     }
 }

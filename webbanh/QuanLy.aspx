@@ -7,7 +7,13 @@
                 <h1 style="color:#000;font-size:23px;text-align:center;font-weight:bold;text-shadow:1px 1px 2px #ccc;">DANH SÁCH BÀI VIẾT</h1>
                 <div class="row2">
                     <div id = "dvGrid" style ="padding:10px;width:800px;align-content:center">
-                
+                        <asp:Label runat="server" Text="Show:" />
+                        <asp:DropDownList runat="server" AutoPostBack="true" ID="ddlHienThiDanhMuc" OnSelectedIndexChanged="dbGrid_SelectedIndexChanged">
+                            <asp:ListItem Text="All" Value="" />
+                            <asp:ListItem Text="Bánh Kem" Value="Bánh Kem" />
+                            <asp:ListItem Text="Kem" Value="Kem"/>
+                            <asp:ListItem Text="Mẹo Vặt" Value="Mẹo Vặt" />
+                        </asp:DropDownList>
                         <asp:GridView ID="GridView1" runat="server"  Width = "800px"
                         AutoGenerateColumns = "false" Font-Names = "Arial"
                         Font-Size = "11pt"  AlternatingRowStyle-BackColor = "#C2D69B" 
@@ -38,7 +44,7 @@
 
                         <asp:TemplateField ItemStyle-Width = "150px"  HeaderText = "Nội Dung">
                             <ItemTemplate>
-                                <asp:Label ID="lblNoiDung" runat="server"
+                                <asp:Label Visible ="false" ID="lblNoiDung" runat="server"
                                     Text='<%# Eval("NoiDung")%>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>

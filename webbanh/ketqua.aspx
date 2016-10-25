@@ -1,11 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="BanhKem.aspx.cs" Inherits="banhkem" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="ketqua.aspx.cs" Inherits="kem" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div class="container" style="margin-top:300px">
-        <h1 style="color:#000;font-size:23px;text-align:center;font-weight:bold;text-shadow:1px 1px 2px #ccc;">DANH SÁCH BÁNH ĐẶC BIỆT</h1>
+        <h1 style="color:#000;font-size:23px;text-align:center;font-weight:bold;text-shadow:1px 1px 2px #ccc;">Kết Quả Tìm Kiếm</h1>
         <div class="row">
 
-           <asp:DataList ID="DataList1" runat="server" DataKeyField="MaBai" RepeatColumns="4" OnItemCommand="DataList1_ItemCommand">
+           <asp:DataList ID="DataList1" runat="server" DataKeyField="MaBai" RepeatColumns="4"  OnItemCommand="DataList1_ItemCommand">
             <ItemTemplate>
                 <table class="auto-style2" style="width:250px">
                     <tr>
@@ -18,7 +18,7 @@
                                 <div class="product-content">
                                     <p class="product-name">
                                         <asp:Label ID="lblTenBai" runat="server" Text='<%# Eval("TenBai") %>'></asp:Label>
-                                         <asp:Label ID="lblMaBai" Visible="false" runat="server" Text='<%# Eval("MaBai") %>'></asp:Label>
+                                        <asp:Label ID="lblMaBai" Visible="false" runat="server" Text='<%# Eval("MaBai") %>'></asp:Label>
                                     </p>
 
                                     <p class="gia">

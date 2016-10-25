@@ -34,8 +34,8 @@
             <div class="menu">
                 <div id="menu">
                     <ul>
-                        <li style="width: 190px"><a href="trangchu.aspx">TRANG CHỦ   </a></li>
-                        <li style="width: 190px"><a href="gioithieu.aspx">GIỚI THIỆU</a></li>
+                        <li style="width: 170px"><a href="trangchu.aspx">TRANG CHỦ   </a></li>
+                        <li style="width: 170px"><a href="gioithieu.aspx">GIỚI THIỆU</a></li>
                         <li><a href="#">CÔNG THỨC LÀM BÁNH</a>
                             <ul>
                                 <li style="width: 250px"><a href="banhkem.aspx">BÁNH KEM</a></li>
@@ -44,20 +44,21 @@
 
                             </ul>
                         </li>
-                        <li style="width: 190px"><a href="timkiem.aspx">TÌM KIẾM</a></li>
-                        <li style="width: 190px"><a href="lienhe.aspx">LIÊN HỆ</a></li>
+                        
+                        <li style="width: 170px"><a href="lienhe.aspx">LIÊN HỆ</a></li>
                         <%if (Session["TenDangNhap"] != null) { %> 
-                            <li style="width: 190px"><a><%= Session["TenDangNhap"] %></a>
+                            <li style="width: 160px"><a><%= Session["TenDangNhap"] %></a>
                                 <ul>
-                                    <li style="width: 190px"><a href="banhkem.aspx">SIGN OUT</a></li>
-                                    <li style="width: 190px"><a href="quanly.aspx">QUẢN LÝ BÀI VIẾT</a></li>
+                                    <li style="width: 160px"><a href="banhkem.aspx">SIGN OUT</a></li>
+                                    <li style="width: 160px"><a href="quanly.aspx">QUẢN LÝ BÀI VIẾT</a></li>
                                 </ul>
                             </li>
                         <% }
                         else { %>
-                            <li style="width: 190px"><a href="dangnhap.aspx">ĐĂNG NHẬP</a></li>
+                            <li style="width: 160px"><a href="dangnhap.aspx">ĐĂNG NHẬP</a></li>
                         <% } %>
-
+                        <li class="liTimKiem" style="width: 170px; height:36px"><asp:TextBox ID="txtTimKiem" runat="server" Height="30px" placeholder="Search" ></asp:TextBox></li> 
+                        <li class="liTimKiem" style="width: 110px; height:36px"><asp:Button id="btnTimKiem" Text="Tìm Kiếm" OnClick="btnTimKiem_Click"  runat="server"/></li>
                         
                     </ul>
                 </div>

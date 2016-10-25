@@ -16,6 +16,7 @@ public partial class banhkem : System.Web.UI.Page
             LoadBaiViet();
         }
     }
+    //Load Dữ Liệu Lên GridView
     private void LoadBaiViet()
     {
         string strQuery = "select * from Bai";
@@ -24,13 +25,14 @@ public partial class banhkem : System.Web.UI.Page
         GridView1.DataSource = db.XULYDULIEU(cmd);
         GridView1.DataBind();
     }
-    //Phan Trang
+    //Phân Trang
     protected void OnPaging(object sender, GridViewPageEventArgs e)
     {
         LoadBaiViet();
         GridView1.PageIndex = e.NewPageIndex;
         GridView1.DataBind();
     }
+    //Xóa Bài Viết
     protected void XoaBaiViet(object sender, EventArgs e)
     {
         LinkButton linkXoa = (LinkButton)sender;
@@ -45,6 +47,7 @@ public partial class banhkem : System.Web.UI.Page
         GridView1.DataSource = db.XULYDULIEU(cmd);
         GridView1.DataBind();
     }
+    //Click Button Đăng Bài
     protected void Submit_DangBaiViet(object sender, EventArgs e)
     {
         string tenbai = txtTenBai.Text;
@@ -60,7 +63,7 @@ public partial class banhkem : System.Web.UI.Page
         cmd.Parameters.Add("@TenBai", SqlDbType.NVarChar).Value = tenbai;
         cmd.Parameters.Add("@DanhMuc", SqlDbType.NVarChar).Value = danhmuc;
         cmd.Parameters.Add("@HinhDaiDien", SqlDbType.VarChar).Value = "";
-        cmd.Parameters.Add("@NoiDung", SqlDbType.Text).Value = noidung;
+        cmd.Parameters.Add("@NoiDung", SqlDbType.NVarChar).Value = Server.HtmlEncode(noidung);
         cmd.Parameters.Add("@NgayDang", SqlDbType.DateTime).Value = ngaydang;
         GridView1.DataSource = db.XULYDULIEU(cmd);
         GridView1.DataBind();
@@ -70,6 +73,7 @@ public partial class banhkem : System.Web.UI.Page
         CKEditor1.Text = "";
         ddlDanhMuc.SelectedIndex = 0;
     }
+    //Click Button Sửa -> Hiển thị dữ liệu vào textbox + ckeditor
     protected void LayThongTinBaiViet(object sender, CommandEventArgs e)
     {
         //bắt sender từ button click
@@ -79,10 +83,12 @@ public partial class banhkem : System.Web.UI.Page
         //get info của row đã chọn
         GridViewRow gvr = (GridViewRow)btn.NamingContainer;
         txtTenBai.Text = ((Label)gvr.FindControl("lblTenBai")).Text;
-        CKEditor1.Text = ((Label)gvr.FindControl("lblNoiDung")).Text;
+        CKEditor1.Text = Server.HtmlDecode(((Label)gvr.FindControl("lblNoiDung")).Text);
         ddlDanhMuc.Text = ((Label)gvr.FindControl("lblDanhMuc")).Text;
         lblMaBaiHidden.Text = mabai.ToString();
     }
+
+    //Click button sửa bài viết
     protected void Submit_SuaBaiViet(object sender, EventArgs e)
     {
         int mabai = Convert.ToInt32(lblMaBaiHidden.Text);
@@ -96,7 +102,7 @@ public partial class banhkem : System.Web.UI.Page
         cmd.Parameters.Add("@TenBai", SqlDbType.NVarChar).Value = txtTenBai.Text;
         cmd.Parameters.Add("@DanhMuc", SqlDbType.NVarChar).Value = ddlDanhMuc.SelectedValue;
         cmd.Parameters.Add("@HinhDaiDien", SqlDbType.VarChar).Value = "";
-        cmd.Parameters.Add("@NoiDung", SqlDbType.Text).Value = CKEditor1.Text;
+        cmd.Parameters.Add("@NoiDung", SqlDbType.NVarChar).Value = Server.HtmlEncode(CKEditor1.Text);
         cmd.Parameters.Add("@NgayDang", SqlDbType.DateTime).Value = ngaydang;
         cmd.Parameters.Add("@Mabai", SqlDbType.Int).Value = mabai;
         GridView1.EditIndex = -1;
@@ -104,6 +110,27 @@ public partial class banhkem : System.Web.UI.Page
         GridView1.DataBind();
 
         //submit xóa hết input
+        txtTenBai.Text = "";
+        CKEditor1.Text = "";
+        ddlDanhMuc.SelectedIndex = 0;
+    }
+
+    //Lọc dữ liệu
+    protected void dbGrid_SelectedIndexChanged(Object sender, EventArgs e) {
+        Database db = new Database();
+        SqlCommand cmd;
+        if (ddlHienThiDanhMuc.SelectedValue != "") {
+            cmd = new SqlCommand("select * from Bai where DanhMuc=@DanhMuc;");
+            cmd.Parameters.Add("@DanhMuc", SqlDbType.NVarChar).Value = ddlHienThiDanhMuc.SelectedValue;
+        }
+        else
+        {
+            cmd = new SqlCommand("select * from Bai");
+            
+        }
+        GridView1.DataSource = db.XULYDULIEU(cmd);
+        GridView1.DataBind();
+
         txtTenBai.Text = "";
         CKEditor1.Text = "";
         ddlDanhMuc.SelectedIndex = 0;

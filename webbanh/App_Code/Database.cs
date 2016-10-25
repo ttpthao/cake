@@ -48,4 +48,11 @@ public class Database
         sda.Fill(dt);
         return dt;
     }
+    public SqlDataReader LAYDULIEUCHITIET(SqlCommand cmd)
+    {
+        cmd.Connection = con;
+        con.Open();
+        SqlDataReader reader = cmd.ExecuteReader();
+        return reader;  
+    }
 }

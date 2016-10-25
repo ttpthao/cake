@@ -21,4 +21,13 @@ public partial class meovat : System.Web.UI.Page
             DataList1.DataBind();
         }
     }
+    protected void DataList1_ItemCommand(object source, DataListCommandEventArgs e)
+    {
+
+        Label mabai = (Label)e.Item.FindControl("lblMaBai");
+        if (mabai != null)
+        {
+            Response.Redirect("chitiet.aspx?mabai=" + mabai.Text);
+        }
+    }
 }

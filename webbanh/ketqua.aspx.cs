@@ -13,12 +13,15 @@ public partial class kem : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
-            string strQuery = "select * from Bai where DanhMuc=@DanhMuc";
-            Database db = new Database();
-            SqlCommand cmd = new SqlCommand(strQuery);
-            cmd.Parameters.Add("@DanhMuc", SqlDbType.NVarChar).Value = "Kem";
-            DataList1.DataSource = db.XULYDULIEU(cmd);
-            DataList1.DataBind();
+            string tukhoa = Request.QueryString["tukhoa"];
+            if (tukhoa != null && tukhoa != "") {
+                string strQuery = "select * from Bai where TenBai Like '%' + @TenBai + '%'";
+                Database db = new Database();
+                SqlCommand cmd = new SqlCommand(strQuery);
+                cmd.Parameters.Add("@TenBai", SqlDbType.NVarChar).Value = tukhoa;
+                DataList1.DataSource = db.XULYDULIEU(cmd);
+                DataList1.DataBind();
+            }
         }
     }
     protected void DataList1_ItemCommand(object source, DataListCommandEventArgs e)
