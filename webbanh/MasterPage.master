@@ -4,28 +4,28 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Shakura Cake</title>
     <link href="css/bootstrap.css" rel="stylesheet" />
     <link href="css/custom.css" rel="stylesheet" />
     <link href="css1/Style1.css" rel="stylesheet" />
     <link href="css1/Stylebanner.css" rel="stylesheet" />
-    
+
 </head>
 <body id="body">
     <form id="form1" runat="server">
-         <asp:ScriptManager ID="ScriptManager1" runat="server">
-    </asp:ScriptManager> 
-    <div id="mainWap">
-        <div id="header">
-            <div class="logo">
-                <asp:Image ID="Image1" runat="server" ImageUrl="~/images/logo1.jpg" />
-            </div>
-            <asp:Image ID="Image2" runat="server" ImageUrl="~/images/banner-mobi1.png" />
-            <%--banner--%>
-            <div class="clr"></div>
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
+        <div id="mainWap">
+            <div id="header">
+                <div class="logo">
+                    <asp:Image ID="Image1" runat="server" ImageUrl="~/images/logo1.jpg" />
+                </div>
+                <asp:Image ID="Image2" runat="server" ImageUrl="~/images/banner-mobi1.png" />
+                <%--banner--%>
+                <div class="clr"></div>
 
-            <%--MENU TRƯỢT--%>
-            <%-- <div class="truot">--%> <%--ĐỪNG BỎ CÁI DIV NÀY LÀ KO BỊ KHOẢNG TRẮNG ĐÓ--%>
+                <%--MENU TRƯỢT--%>
+                <%-- <div class="truot">--%> <%--ĐỪNG BỎ CÁI DIV NÀY LÀ KO BỊ KHOẢNG TRẮNG ĐÓ--%>
 
 
             <div class="main">
@@ -61,60 +61,60 @@
                         <li class="liTimKiem" style="width: 110px; height:36px"><asp:Button id="btnTimKiem" Text="Tìm Kiếm" OnClick="btnTimKiem_Click"  runat="server"/></li>
                         
                     </ul>
+                    </div>
                 </div>
+                <%-- hết menu ngang--%>
             </div>
-            <%-- hết menu ngang--%>
-        </div>
-        <%--</div>--%>
-        <%--HẾT MENU TRƯỢT--%>
+            <%--</div>--%>
+            <%--HẾT MENU TRƯỢT--%>
 
             <%--MENU TRÁI--%>
-        <%--<div class="left">
+            <%--<div class="left">
             cột bên trái
         </div>--%>
             <%--PHẦN CHÍNH--%>
-        <div class="right">
-            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
-                nội dung
-            </asp:ContentPlaceHolder>
-        </div>
-        <div class="clr"></div>
-        <%--FOOTTER--%>
-        <hr />
-        <div class="footer">
-               <footer>
-
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h2>HỖ TRỢ KHÁCH HÀNG</h2>
-                    
-                    <ul>
-                        <li><a href="#">Hotline:12345678</a></li>
-                        <li><a href="#">Tài liệu hướng dẫn</a></li>
-                    </ul>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h2>THÔNG TIN CỬA HÀNG</h2>
-                    
-                    <ul>
-                        <li><a href="#">Địa chỉ: Phú Thọ - Bình Dương</a></li>
-                        <li><a href="#">Số điện thoại: 09876543221</a></li>
-                        <li><a href="#">Email: thuytrang@gmail.com</a></li>
-                        <li><br /></li>
-                    </ul>
-                </div>
+            <div class="right">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    nội dung
+                </asp:ContentPlaceHolder>
             </div>
-       
-        <p style="text-align:center;color:#fff;margin-bottom:0px;line-height:20px;font-size:15px">
+            <div class="clr"></div>
+            <%--FOOTTER--%>
+            <hr />
+            <div class="footer">
+                <footer>
 
-        </p>
-    </footer>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <h2 style="padding-bottom: 10px; font-weight: bold">HỖ TRỢ KHÁCH HÀNG</h2>
+
+                            <ul>
+                                <li style="padding-bottom: 5px"><a href="#">Hotline: 12345678</a></li>
+                                <li><a href="#">Tài liệu hướng dẫn</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <h2 style="padding-bottom: 10px; font-weight: bold">THÔNG TIN CỬA HÀNG</h2>
+                            <ul>
+                                <li style="padding-bottom: 5px"><a href="#">Địa chỉ: Phú Thọ - Bình Dương</a></li>
+                                <li style="padding-bottom: 5px"><a href="#">Số điện thoại: 09876543221</a></li>
+                                <li style="padding-bottom: 5px"><a href="#">Email: thuytrang@gmail.com</a></li>
+                                <li>
+                                    <br />
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <p style="text-align: center; color: #fff; margin-bottom: 0px; line-height: 20px; font-size: 15px">
+                    </p>
+                </footer>
+            </div>
         </div>
-    </div>
-        
+
     </form>
     <script src="js/jquery-1.11.2.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 </body>
-    
+
 </html>
