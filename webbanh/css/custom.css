@@ -218,7 +218,12 @@ box-shadow: 0px 0px 2px 0px rgba(184,182,184,1);
 	font-weight:bold;
 	color:#000;
 }
-
+.auto-style2{
+	margin-left:24px;
+}
+#ContentPlaceHolder1_DataList1 {
+    margin-left:24px;
+}
 hr.style-four {
 	margin-top:30px;
     height: 12px;
