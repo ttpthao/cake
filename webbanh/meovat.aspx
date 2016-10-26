@@ -13,7 +13,7 @@
                         <div class="product">
                             <article>
                                 <div class="product-img product-fix hoverimage">
-                                    <a href="#"><img src="images/banh-Matcha1.jpg" alt="" /></a>
+                                    <asp:Image ID="Image1" runat="server"  ImageUrl='<%# Eval("HinhDaiDien") %>' Height="180px" Width="250px"/>
                                 </div>
                                 <div class="product-content">
                                     <p class="product-name">
