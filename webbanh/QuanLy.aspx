@@ -4,6 +4,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="container" style="margin-top: 300px">
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+           <%-- <Triggers>
+                   <asp:AsyncPostBackTrigger ControlID="Button1" />
+                 </Triggers>--%>
             <ContentTemplate>
                 <h1 style="color: #000; font-size: 23px; text-align: center; font-weight: bold; text-shadow: 1px 1px 2px #ccc;">DANH SÁCH BÀI VIẾT</h1>
                 <div class="row2">
@@ -81,9 +84,7 @@
                             <AlternatingRowStyle BackColor="#C2D69B" />
                         </asp:GridView>
 
-                        <triggers>
-                        <asp:AsyncPostBackTrigger ControlID = "GridView1" />
-                        </triggers>
+                        
 
                     </div>
 
@@ -128,6 +129,7 @@
                     <asp:Button ID="btnChinhSua" runat="server" Text="Sửa Bài" OnClick="Submit_SuaBaiViet" Width="150px" Height="30px" />
                     <% } %>
                 </div>
+
             </ContentTemplate>
         </asp:UpdatePanel>
     </div>

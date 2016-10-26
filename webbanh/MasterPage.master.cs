@@ -9,11 +9,6 @@ public partial class MasterPage : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (HttpContext.Current.Request.Url.AbsolutePath != "/dangnhap.aspx")
-        {
-            Session["Url"] = HttpContext.Current.Request.Url.AbsolutePath;
-        }
-
         btnTimKiem.Click += new EventHandler(this.btnTimKiem_Click);
     }
    public void btnTimKiem_Click(Object sender,

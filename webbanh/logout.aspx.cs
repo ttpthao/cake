@@ -14,14 +14,6 @@ public partial class banhkem : System.Web.UI.Page
         if (Session["TenDangNhap"] != null) {
             Session.Remove("TenDangNhap");
         }
-
-        if (Session["Url"] != null)
-        {
-            Response.Redirect(Session["Url"].ToString());
-        }
-        else
-        {
-            Response.Redirect("trangchu.aspx");
-        }
+        Response.Redirect("trangchu.aspx");
     }
 }
