@@ -58,15 +58,10 @@ public partial class banhkem : System.Web.UI.Page
 
         if (fulHinhDaiDien.HasFile)
         {
-            //getting length of uploaded file
-            int length = fulHinhDaiDien.PostedFile.ContentLength;
-            //create a byte array to store the binary image data
-            byte[] imgbyte = new byte[length];
-            //store the currently selected file in memeory
-            HttpPostedFile img = fulHinhDaiDien.PostedFile;
-            //set the binary data
-            img.InputStream.Read(imgbyte, 0, length);
-        
+            string filePath = fulHinhDaiDien.PostedFile.FileName; // file name with path.
+            string fileName = fulHinhDaiDien.FileName;// Only file name.
+
+            fulHinhDaiDien.PostedFile.SaveAs(Server.MapPath("~/images/HinhDaiDien/")  + fileName);
 
             string tenbai = txtTenBai.Text;
             string noidung = CKEditor1.Text;
@@ -80,7 +75,7 @@ public partial class banhkem : System.Web.UI.Page
             "select * from Bai";
             cmd.Parameters.Add("@TenBai", SqlDbType.NVarChar).Value = tenbai;
             cmd.Parameters.Add("@DanhMuc", SqlDbType.NVarChar).Value = danhmuc;
-            cmd.Parameters.Add("@HinhDaiDien", SqlDbType.Image).Value = imgbyte;
+            cmd.Parameters.Add("@HinhDaiDien", SqlDbType.VarChar).Value = "~/images/HinhDaiDien/"  + fileName;
             cmd.Parameters.Add("@NoiDung", SqlDbType.NVarChar).Value = Server.HtmlEncode(noidung);
             cmd.Parameters.Add("@NgayDang", SqlDbType.DateTime).Value = ngaydang;
             GridView1.DataSource = db.XULYDULIEU(cmd);

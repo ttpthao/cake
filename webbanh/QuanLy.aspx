@@ -4,9 +4,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="container" style="margin-top: 300px">
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-           <%-- <Triggers>
-                   <asp:AsyncPostBackTrigger ControlID="Button1" />
-                 </Triggers>--%>
+          
             <ContentTemplate>
                 <h1 style="color: #000; font-size: 23px; text-align: center; font-weight: bold; text-shadow: 1px 1px 2px #ccc;">DANH SÁCH BÀI VIẾT</h1>
                 <div class="row2">
@@ -43,8 +41,7 @@
 
                                 <asp:TemplateField ItemStyle-Width="100px" HeaderText="Hình Đại Diện">
                                     <ItemTemplate>
-                                        <asp:Label ID="lblHinhDaiDien" runat="server"
-                                            Text='<%# Eval("HinhDaiDien")%>'></asp:Label>
+                                        <asp:Image ID="Image1" runat="server"  ImageUrl='<%# Eval("HinhDaiDien") %>' Height="150px" Width="150px"/>
                                     </ItemTemplate>
                                 </asp:TemplateField>
 
@@ -131,6 +128,10 @@
                 </div>
 
             </ContentTemplate>
+              <Triggers>
+                   <asp:AsyncPostBackTrigger ControlID="GridView1" />
+                   <asp:PostBackTrigger  ControlID="btnDangBai" />
+              </Triggers>
         </asp:UpdatePanel>
     </div>
 </asp:Content>
