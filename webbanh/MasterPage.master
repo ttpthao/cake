@@ -25,7 +25,7 @@
                 <div class="clr"></div>
 
                 <%--MENU TRƯỢT--%>
-                <%-- <div class="truot">--%> <%--ĐỪNG BỎ CÁI DIV NÀY LÀ KO BỊ KHOẢNG TRẮNG ĐÓ--%>
+                <%-- <div class="truot">--%>
 
 
             <div class="main">
@@ -34,7 +34,7 @@
             <div class="menu">
                 <div id="menu">
                     <ul>
-                        <li style="width: 170px"><a href="trangchu.aspx">TRANG CHỦ   </a></li>
+                        <li style="width: 170px"><a href="trangchu.aspx">TRANG CHỦ</a></li>
                         <li style="width: 170px"><a href="gioithieu.aspx">GIỚI THIỆU</a></li>
                         <li><a href="#">CÔNG THỨC LÀM BÁNH</a>
                             <ul>
@@ -47,10 +47,10 @@
                         
                         <li style="width: 170px"><a href="lienhe.aspx">LIÊN HỆ</a></li>
                         <%if (Session["TenDangNhap"] != null) { %> 
-                            <li style="width: 160px"><a><%= Session["TenDangNhap"] %></a>
+                            <li style="width: 160px"><a><%= "Chào " + Session["TenDangNhap"] %></a>
                                 <ul>
-                                    <li style="width: 160px"><a href="logout.aspx">SIGN OUT</a></li>
-                                    <li style="width: 160px"><a href="quanly.aspx">QUẢN LÝ BÀI VIẾT</a></li>
+                                    <li style="width: 160px"><a href="logout.aspx">ĐĂNG XUẤT</a></li>
+                                    <li style="width: 160px"><a href="quanly.aspx">QUẢN LÝ</a></li>
                                 </ul>
                             </li>
                         <% }
