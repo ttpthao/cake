@@ -22,7 +22,14 @@ public partial class dangnhap : System.Web.UI.Page
         if (data.Rows.Count > 0)
         {
             Session["TenDangNhap"] = data.Rows[0]["TenDangNhap"].ToString();
-            Response.Redirect("trangchu.aspx");
+            if (Session["Url"] != null)
+            {
+                Response.Redirect(Session["Url"].ToString());
+            }
+            else
+            {
+                Response.Redirect("trangchu.aspx");
+            }
         }
         else
         { 

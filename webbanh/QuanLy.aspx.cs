@@ -50,28 +50,42 @@ public partial class banhkem : System.Web.UI.Page
     //Click Button Đăng Bài
     protected void Submit_DangBaiViet(object sender, EventArgs e)
     {
-        string tenbai = txtTenBai.Text;
-        string noidung = CKEditor1.Text;
-        string danhmuc = ddlDanhMuc.SelectedValue;
-        DateTime ngaydang = DateTime.Now;
-        Database db = new Database();
-        SqlCommand cmd = new SqlCommand();
-        cmd.CommandType = CommandType.Text;
-        cmd.CommandText = "insert into Bai(TenBai, DanhMuc,HinhDaiDien, NoiDung, NgayDang) " +
-        "values(@TenBai, @DanhMuc, @HinhDaiDien, @NoiDung, @NgayDang);" +
-        "select * from Bai";
-        cmd.Parameters.Add("@TenBai", SqlDbType.NVarChar).Value = tenbai;
-        cmd.Parameters.Add("@DanhMuc", SqlDbType.NVarChar).Value = danhmuc;
-        cmd.Parameters.Add("@HinhDaiDien", SqlDbType.VarChar).Value = "";
-        cmd.Parameters.Add("@NoiDung", SqlDbType.NVarChar).Value = Server.HtmlEncode(noidung);
-        cmd.Parameters.Add("@NgayDang", SqlDbType.DateTime).Value = ngaydang;
-        GridView1.DataSource = db.XULYDULIEU(cmd);
-        GridView1.DataBind();
 
-        //submit xóa hết input
-        txtTenBai.Text = "";
-        CKEditor1.Text = "";
-        ddlDanhMuc.SelectedIndex = 0;
+        if (fileuploadImage.HasFile)
+        {
+            //getting length of uploaded file
+            int length = fileuploadImage.PostedFile.ContentLength;
+            //create a byte array to store the binary image data
+            byte[] imgbyte = new byte[length];
+            //store the currently selected file in memeory
+            HttpPostedFile img = fileuploadImage.PostedFile;
+            //set the binary data
+            img.InputStream.Read(imgbyte, 0, length);
+        
+
+            string tenbai = txtTenBai.Text;
+            string noidung = CKEditor1.Text;
+            string danhmuc = ddlDanhMuc.SelectedValue;
+            DateTime ngaydang = DateTime.Now;
+            Database db = new Database();
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "insert into Bai(TenBai, DanhMuc,HinhDaiDien, NoiDung, NgayDang) " +
+            "values(@TenBai, @DanhMuc, @HinhDaiDien, @NoiDung, @NgayDang);" +
+            "select * from Bai";
+            cmd.Parameters.Add("@TenBai", SqlDbType.NVarChar).Value = tenbai;
+            cmd.Parameters.Add("@DanhMuc", SqlDbType.NVarChar).Value = danhmuc;
+            cmd.Parameters.Add("@HinhDaiDien", SqlDbType.Image).Value = imgbyte;
+            cmd.Parameters.Add("@NoiDung", SqlDbType.NVarChar).Value = Server.HtmlEncode(noidung);
+            cmd.Parameters.Add("@NgayDang", SqlDbType.DateTime).Value = ngaydang;
+            GridView1.DataSource = db.XULYDULIEU(cmd);
+            GridView1.DataBind();
+
+            //submit xóa hết input
+            txtTenBai.Text = "";
+            CKEditor1.Text = "";
+            ddlDanhMuc.SelectedIndex = 0;
+        }
     }
     //Click Button Sửa -> Hiển thị dữ liệu vào textbox + ckeditor
     protected void LayThongTinBaiViet(object sender, CommandEventArgs e)

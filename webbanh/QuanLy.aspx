@@ -2,7 +2,7 @@
 <%@Register Assembly="CKEditor.NET" Namespace="CKEditor.NET" TagPrefix="CKEditor"%>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div class="container" style="margin-top:300px">
-        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server" >
             <ContentTemplate>
                 <h1 style="color:#000;font-size:23px;text-align:center;font-weight:bold;text-shadow:1px 1px 2px #ccc;">DANH SÁCH BÀI VIẾT</h1>
                 <div class="row2">
@@ -89,13 +89,18 @@
                         <asp:Label ID="lblMaBaiHidden" runat="server" Visible="false"></asp:Label>
                         <b style="color:#000;font-size:18px;text-align:left;font-weight:bold">Tên Bài Viết:</b> <asp:TextBox ID="txtTenBai" runat="server" Width="400px" Height="30px" Font-Size="18"></asp:TextBox>
                             <br /><br />
-                            <b style="color:#000;font-size:18px;text-align:left;font-weight:bold">Danh Mục:</b>
+                            <b style="color:#000;font-size:18px;text-align:left;font-weight:bold; margin-left:15px">Danh Mục:</b>
                             <asp:DropDownList ID="ddlDanhMuc" runat="server" Width="400px" Height="30px">
-                            <asp:ListItem Text="Chọn Danh Mục" Value="0"></asp:ListItem>
-                            <asp:ListItem Text="Bánh Kem" Value="Bánh Kem"></asp:ListItem>
-                            <asp:ListItem Text="Kem" Value="Kem"></asp:ListItem>
-                                <asp:ListItem Text="Mẹo Vặt" Value="Mẹo Vặt"></asp:ListItem>
-                        </asp:DropDownList>
+                                <asp:ListItem Text="Chọn Danh Mục" Value="0"></asp:ListItem>
+                                <asp:ListItem Text="Bánh Kem" Value="Bánh Kem"></asp:ListItem>
+                                <asp:ListItem Text="Kem" Value="Kem"></asp:ListItem>
+                                    <asp:ListItem Text="Mẹo Vặt" Value="Mẹo Vặt"></asp:ListItem>
+                             </asp:DropDownList>
+                             <br /><br />
+                            <div>
+                           <b style="color:#000;font-size:18px;text-align:left;font-weight:bold; margin-right:410px">Hình Đại Diện:</b></div>
+                            <br />
+                             <asp:FileUpload ID="fileuploadImage" runat="server" />
                         </div>
                     <div class="col-md-12 col-sm-6 col-xs-12 product">
                         <CKEditor:CKEditorControl ID="CKEditor1" BasePath="~/ckeditor" runat="server"></CKEditor:CKEditorControl>
