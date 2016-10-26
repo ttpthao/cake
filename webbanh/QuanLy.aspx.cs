@@ -55,14 +55,12 @@ public partial class banhkem : System.Web.UI.Page
     //Click Button Đăng Bài
     protected void Submit_DangBaiViet(object sender, EventArgs e)
     {
-
-        if (fulHinhDaiDien.HasFile)
-        {
-            string filePath = fulHinhDaiDien.PostedFile.FileName; // file name with path.
-            string fileName = fulHinhDaiDien.FileName;// Only file name.
-
-            fulHinhDaiDien.PostedFile.SaveAs(Server.MapPath("~/images/HinhDaiDien/")  + fileName);
-
+            string fileName = "banh-Matcha.jpg";
+            if (fulHinhDaiDien.HasFile)
+            {
+                fileName = fulHinhDaiDien.FileName;// Only file name.
+                fulHinhDaiDien.PostedFile.SaveAs(Server.MapPath("~/images/HinhDaiDien/") + fileName);
+            }
             string tenbai = txtTenBai.Text;
             string noidung = CKEditor1.Text;
             string danhmuc = ddlDanhMuc.SelectedValue;
@@ -71,8 +69,7 @@ public partial class banhkem : System.Web.UI.Page
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "insert into Bai(TenBai, DanhMuc,HinhDaiDien, NoiDung, NgayDang) " +
-            "values(@TenBai, @DanhMuc, @HinhDaiDien, @NoiDung, @NgayDang);" +
-            "select * from Bai";
+            "values(@TenBai, @DanhMuc, @HinhDaiDien, @NoiDung, @NgayDang)";
             cmd.Parameters.Add("@TenBai", SqlDbType.NVarChar).Value = tenbai;
             cmd.Parameters.Add("@DanhMuc", SqlDbType.NVarChar).Value = danhmuc;
             cmd.Parameters.Add("@HinhDaiDien", SqlDbType.VarChar).Value = "~/images/HinhDaiDien/"  + fileName;
@@ -81,11 +78,12 @@ public partial class banhkem : System.Web.UI.Page
             GridView1.DataSource = db.XULYDULIEU(cmd);
             GridView1.DataBind();
 
+            Response.Redirect("quanly.aspx");
             //submit xóa hết input
             txtTenBai.Text = "";
             CKEditor1.Text = "";
             ddlDanhMuc.SelectedIndex = 0;
-        }
+        
     }
     //Click Button Sửa -> Hiển thị dữ liệu vào textbox + ckeditor
     protected void LayThongTinBaiViet(object sender, CommandEventArgs e)
@@ -93,40 +91,80 @@ public partial class banhkem : System.Web.UI.Page
         //bắt sender từ button click
         LinkButton btn = (LinkButton)sender;
         //lấy mã bài
-        int mabai = Convert.ToInt32(e.CommandArgument.ToString());
-        //get info của row đã chọn
-        GridViewRow gvr = (GridViewRow)btn.NamingContainer;
-        txtTenBai.Text = ((Label)gvr.FindControl("lblTenBai")).Text;
-        CKEditor1.Text = Server.HtmlDecode(((Label)gvr.FindControl("lblNoiDung")).Text);
-        ddlDanhMuc.Text = ((Label)gvr.FindControl("lblDanhMuc")).Text;
-        lblMaBaiHidden.Text = mabai.ToString();
+        string mabai = e.CommandArgument.ToString();
+        if (mabai != null && mabai != "")
+        {
+            string strQuery = "select * from Bai where Mabai=@Mabai";
+            Database db = new Database();
+            SqlCommand cmd = new SqlCommand(strQuery);
+            cmd.Parameters.Add("@Mabai", SqlDbType.NVarChar).Value = mabai;
+            SqlDataReader reader = db.LAYDULIEUCHITIET(cmd);
+            while (reader.Read())
+            {
+                CKEditor1.Text = Server.HtmlDecode(reader["NoiDung"].ToString());
+            }
+            //get info của row đã chọn
+            GridViewRow gvr = (GridViewRow)btn.NamingContainer;
+            txtTenBai.Text = ((Label)gvr.FindControl("lblTenBai")).Text;
+            ddlDanhMuc.Text = ((Label)gvr.FindControl("lblDanhMuc")).Text;
+            lblMaBaiHidden.Text = mabai.ToString();
+        }
     }
 
     //Click button sửa bài viết
     protected void Submit_SuaBaiViet(object sender, EventArgs e)
     {
-        int mabai = Convert.ToInt32(lblMaBaiHidden.Text);
-        DateTime ngaydang = DateTime.Now;
-        Database db = new Database();
-        SqlCommand cmd = new SqlCommand();
-        cmd.CommandType = CommandType.Text;
-        cmd.CommandText = "update Bai set TenBai=@TenBai," +
-         "DanhMuc=@DanhMuc,HinhDaiDien=@HinhDaiDien, NoiDung=@NoiDung, NgayDang=@NgayDang where MaBai=@Mabai;" +
-         "select * from Bai";
-        cmd.Parameters.Add("@TenBai", SqlDbType.NVarChar).Value = txtTenBai.Text;
-        cmd.Parameters.Add("@DanhMuc", SqlDbType.NVarChar).Value = ddlDanhMuc.SelectedValue;
-        cmd.Parameters.Add("@HinhDaiDien", SqlDbType.VarChar).Value = "";
-        cmd.Parameters.Add("@NoiDung", SqlDbType.NVarChar).Value = Server.HtmlEncode(CKEditor1.Text);
-        cmd.Parameters.Add("@NgayDang", SqlDbType.DateTime).Value = ngaydang;
-        cmd.Parameters.Add("@Mabai", SqlDbType.Int).Value = mabai;
-        GridView1.EditIndex = -1;
-        GridView1.DataSource = db.XULYDULIEU(cmd);
-        GridView1.DataBind();
+        if (fulHinhDaiDien.HasFile)
+        {
+            string fileName = fulHinhDaiDien.FileName;// Only file name.
 
-        //submit xóa hết input
-        txtTenBai.Text = "";
-        CKEditor1.Text = "";
-        ddlDanhMuc.SelectedIndex = 0;
+            int mabai = Convert.ToInt32(lblMaBaiHidden.Text);
+            DateTime ngaydang = DateTime.Now;
+            Database db = new Database();
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "update Bai set TenBai=@TenBai," +
+             "DanhMuc=@DanhMuc,HinhDaiDien=@HinhDaiDien, NoiDung=@NoiDung, NgayDang=@NgayDang where MaBai=@Mabai";
+            cmd.Parameters.Add("@TenBai", SqlDbType.NVarChar).Value = txtTenBai.Text;
+            cmd.Parameters.Add("@DanhMuc", SqlDbType.NVarChar).Value = ddlDanhMuc.SelectedValue;
+            cmd.Parameters.Add("@HinhDaiDien", SqlDbType.VarChar).Value = "~/images/HinhDaiDien/" + fileName;
+            cmd.Parameters.Add("@NoiDung", SqlDbType.NVarChar).Value = Server.HtmlEncode(CKEditor1.Text);
+            cmd.Parameters.Add("@NgayDang", SqlDbType.DateTime).Value = ngaydang;
+            cmd.Parameters.Add("@Mabai", SqlDbType.Int).Value = mabai;
+            GridView1.EditIndex = -1;
+            GridView1.DataSource = db.XULYDULIEU(cmd);
+            GridView1.DataBind();
+            fulHinhDaiDien.PostedFile.SaveAs(Server.MapPath("~/images/HinhDaiDien/") + fileName);
+
+            Response.Redirect("quanly.aspx");
+            //submit xóa hết input
+            txtTenBai.Text = "";
+            CKEditor1.Text = "";
+            ddlDanhMuc.SelectedIndex = 0;
+        }
+        else {
+            int mabai = Convert.ToInt32(lblMaBaiHidden.Text);
+            DateTime ngaydang = DateTime.Now;
+            Database db = new Database();
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "update Bai set TenBai=@TenBai," +
+             "DanhMuc=@DanhMuc, NoiDung=@NoiDung, NgayDang=@NgayDang where MaBai=@Mabai";
+            cmd.Parameters.Add("@TenBai", SqlDbType.NVarChar).Value = txtTenBai.Text;
+            cmd.Parameters.Add("@DanhMuc", SqlDbType.NVarChar).Value = ddlDanhMuc.SelectedValue;
+            cmd.Parameters.Add("@NoiDung", SqlDbType.NVarChar).Value = Server.HtmlEncode(CKEditor1.Text);
+            cmd.Parameters.Add("@NgayDang", SqlDbType.DateTime).Value = ngaydang;
+            cmd.Parameters.Add("@Mabai", SqlDbType.Int).Value = mabai;
+            GridView1.EditIndex = -1;
+            GridView1.DataSource = db.XULYDULIEU(cmd);
+            GridView1.DataBind();
+            Response.Redirect("quanly.aspx");
+
+            //submit xóa hết input
+            txtTenBai.Text = "";
+            CKEditor1.Text = "";
+            ddlDanhMuc.SelectedIndex = 0;
+        }
     }
 
     //Lọc dữ liệu

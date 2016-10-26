@@ -45,13 +45,6 @@
                                     </ItemTemplate>
                                 </asp:TemplateField>
 
-                                <asp:TemplateField ItemStyle-Width="150px" HeaderText="Nội Dung">
-                                    <ItemTemplate>
-                                        <asp:Label Visible="false" ID="lblNoiDung" runat="server"
-                                            Text='<%# Eval("NoiDung")%>'></asp:Label>
-                                    </ItemTemplate>
-                                </asp:TemplateField>
-
                                 <asp:TemplateField ItemStyle-Width="200px" HeaderText="Ngày Đăng">
                                     <ItemTemplate>
                                         <asp:Label ID="lblNgayDang" runat="server"
@@ -98,7 +91,7 @@
                             <td style="text-align: left;padding-bottom:20px "><b style="color: #000; font-size: 18px; font-weight: bold">Danh Mục</b></td>
                             <td style="padding-bottom:20px">
                                 <asp:DropDownList ID="ddlDanhMuc" runat="server" Width="400px" Height="30px">
-                                    <asp:ListItem Text="Chọn Danh Mục" Value="0"></asp:ListItem>
+                                    <asp:ListItem Text="Chọn Danh Mục" Value="Chưa Phân Lọai"></asp:ListItem>
                                     <asp:ListItem Text="Bánh Kem" Value="Bánh Kem"></asp:ListItem>
                                     <asp:ListItem Text="Kem" Value="Kem"></asp:ListItem>
                                     <asp:ListItem Text="Mẹo Vặt" Value="Mẹo Vặt"></asp:ListItem>
@@ -106,7 +99,7 @@
                         </tr>
                         <tr>
                             <td style="text-align: left; padding-bottom:20px; padding-right: 20px"><b style="color: #000; font-size: 18px; font-weight: bold">Hình Đại Diện</b></td>
-                            <td style="padding-bottom:20px"><asp:FileUpload ID="fulHinhDaiDien" runat="server" Width="398px" /></td>
+                            <td style="padding-bottom:20px"><asp:FileUpload ID="fulHinhDaiDien" runat="server" Width="398px"  /></td>
                         </tr>
                         <tr>
                             <td style="text-align: left; "><b style="color: #000; font-size: 18px; font-weight: bold">Nội Dung</b></td>
@@ -131,6 +124,7 @@
               <Triggers>
                    <asp:AsyncPostBackTrigger ControlID="GridView1" />
                    <asp:PostBackTrigger  ControlID="btnDangBai" />
+                  <asp:PostBackTrigger  ControlID="btnChinhSua" />
               </Triggers>
         </asp:UpdatePanel>
     </div>
