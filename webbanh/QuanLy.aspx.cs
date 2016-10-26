@@ -11,6 +11,11 @@ public partial class banhkem : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Session["TenDangNhap"] == null)
+        {
+            Response.Redirect("dangnhap.aspx");
+        }
+
         if (!IsPostBack)
         {
             LoadBaiViet();
@@ -51,14 +56,14 @@ public partial class banhkem : System.Web.UI.Page
     protected void Submit_DangBaiViet(object sender, EventArgs e)
     {
 
-        if (fileuploadImage.HasFile)
+        if (fulHinhDaiDien.HasFile)
         {
             //getting length of uploaded file
-            int length = fileuploadImage.PostedFile.ContentLength;
+            int length = fulHinhDaiDien.PostedFile.ContentLength;
             //create a byte array to store the binary image data
             byte[] imgbyte = new byte[length];
             //store the currently selected file in memeory
-            HttpPostedFile img = fileuploadImage.PostedFile;
+            HttpPostedFile img = fulHinhDaiDien.PostedFile;
             //set the binary data
             img.InputStream.Read(imgbyte, 0, length);
         
