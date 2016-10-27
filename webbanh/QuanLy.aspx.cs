@@ -18,6 +18,10 @@ public partial class banhkem : System.Web.UI.Page
 
         if (!IsPostBack)
         {
+            //--config ckfinder
+            CKFinder.FileBrowser _FileBrowser = new CKFinder.FileBrowser();
+            _FileBrowser.BasePath = "/ckfinder";
+            _FileBrowser.SetupCKEditor(CKEditor1);
             LoadBaiViet();
         }
     }
